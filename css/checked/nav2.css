@@ -1,0 +1,78 @@
+nav {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  background-color: #025E73;
+  background: linear-gradient(135deg, #011F26 0%, #025E73 100%);
+  border: 3px solid #011F26;
+  border-radius: 50px;
+  padding: 8px 16px;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 80%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+    font-size: larger;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    white-space: nowrap;
+}
+
+nav ul li a {
+  color: #f2f1ed;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #F2A71B;
+  text-decoration: underline;
+  transform: scale(1.3);
+}
+
+nav ul li.active a {
+  color: #F2A71B;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+nav ul li img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.5s ease;
+}
+
+nav ul li img:hover {
+  transform: scale(3);
+}
+
+nav ul li.contact a {
+  font-weight: bold;
+  border: 3px solid #011F26;
+  border-radius: 999px;
+  padding: 6px 16px;
+  background-color: #f2f1ed;
+  color: #011F26;
+}
+nav ul li.contact a:hover {
+  font-weight: bold;
+  border: 3px solid #011F26;
+  border-radius: 999px;
+  padding: 6px 16px;
+  background-color: #F2A71B;
+  color: #f2f1ed;
+}

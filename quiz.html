@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon site personnel</title>
+<link rel="stylesheet" href="css/checked/nav2.css"  >
+<link rel="stylesheet" href="css/checked/body_header_footer.css">
+<link rel="stylesheet" href="css/checked/quiz.css">
+</head>
+<body>
+
+<header>
+<div>
+    <img src="images/titre.png" height="100%" width="100%">
+</div>
+</header>
+
+<nav >
+<ul >
+<li id="li1"><img src="images/icon2.png" >                              </li>
+<li id="li2"><a href="index.html">Accueil                       </a>    </li>
+<li id="li5"><a href="quiz.html">Quizz                          </a>    </li>
+<li id="li6" class="contact"><a href="contact.html">Contact     </a>    </li>
+</ul>
+</nav>
+
+<main>
+  <div class="quiz-header">
+    <h2>Testez Vos Connaissances !</h2>
+    <p>Choisissez votre domaine et votre niveau de difficulté</p>
+  </div>
+
+  <!-- Sélection du domaine -->
+  <div class="domain-selection">
+    <h3>Choisissez votre domaine :</h3>
+    <div class="domain-buttons">
+      <button class="domain-btn" onclick="selectDomain('lol')">
+        🎮 League of Legends
+      </button>
+      <button class="domain-btn" onclick="selectDomain('design')">
+        🎨 Design Graphique
+      </button>
+      <button class="domain-btn" onclick="selectDomain('gamedev')">
+        🕹️ Game Development
+      </button>
+      <button class="domain-btn" onclick="selectDomain('robotics')">
+        🤖 Robotique
+      </button>
+    </div>
+  </div>
+
+  <!-- Mode Switch -->
+  <div class="mode-switch-container">
+    <h4>Sélectionnez le niveau de difficulté :</h4>
+    <div class="switch-wrapper">
+      <span class="switch-label easy" id="easyLabel">FACILE</span>
+      <label class="switch">
+        <input type="checkbox" id="modeSwitch" onchange="toggleMode()">
+        <span class="slider"></span>
+      </label>
+      <span class="switch-label hard" id="hardLabel">DIFFICILE</span>
+    </div>
+  </div>
+
+  <!-- LOL Easy Quiz -->
+  <div class="quiz-container" id="lol-easy">
+    <form id="quizForm-lol-easy">
+      <div class="question">
+        <p>1. Combien de joueurs par équipe dans une partie classique de LoL ?</p>
+        <label><input type="radio" name="q1" value="1"> 5 joueurs</label>
+        <label><input type="radio" name="q1" value="0"> 6 joueurs</label>
+      </div>
+
+      <div class="question">
+        <p>2. Comment s'appelle la carte principale de League of Legends ?</p>
+        <label><input type="radio" name="q2" value="0"> Crystal Scar</label>
+        <label><input type="radio" name="q2" value="1"> Summoner's Rift</label>
+      </div>
+
+      <div class="question">
+        <p>3. Quel rôle utilise principalement des sorts magiques ?</p>
+        <label><input type="radio" name="q3" value="1"> Mage</label>
+        <label><input type="radio" name="q3" value="0"> Marksman</label>
+      </div>
+
+      <div class="question">
+        <p>4. Combien de voies (lanes) principales y a-t-il sur Summoner's Rift ?</p>
+        <label><input type="radio" name="q4" value="0"> 4 voies</label>
+        <label><input type="radio" name="q4" value="1"> 3 voies</label>
+      </div>
+
+      <div class="question">
+        <p>5. Quel objectif principal faut-il détruire pour gagner la partie ?</p>
+        <label><input type="radio" name="q5" value="0"> Les inhibiteurs</label>
+        <label><input type="radio" name="q5" value="1"> Le Nexus ennemi</label>
+      </div>
+
+      <div class="question">
+        <p>6. Qui développe League of Legends ?</p>
+        <label><input type="radio" name="q6" value="1"> Riot Games</label>
+        <label><input type="radio" name="q6" value="0"> Blizzard Entertainment</label>
+      </div>
+
+      <div class="question">
+        <p>7. Quel champion est connu comme "The Blind Monk" ?</p>
+        <label><input type="radio" name="q7" value="0"> Yasuo</label>
+        <label><input type="radio" name="q7" value="1"> Lee Sin</label>
+      </div>
+
+      <div class="question">
+        <p>8. À quel niveau un champion peut-il utiliser son sort d'invocateur Flash ?</p>
+        <label><input type="radio" name="q8" value="0"> Niveau 5</label>
+        <label><input type="radio" name="q8" value="1"> Niveau 1</label>
+      </div>
+
+      <div class="question">
+        <p>9. Quel type de monstre offre un buff qui améliore les dégâts ?</p>
+        <label><input type="radio" name="q9" value="1"> Dragon</label>
+        <label><input type="radio" name="q9" value="0"> Baron Nashor</label>
+      </div>
+
+      <div class="question">
+        <p>10. Quelle est la monnaie utilisée pour acheter des objets en jeu ?</p>
+        <label><input type="radio" name="q10" value="0"> RP (Riot Points)</label>
+        <label><input type="radio" name="q10" value="1"> Or (Gold)</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('lol-easy')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- LOL Hard Quiz -->
+  <div class="quiz-container" id="lol-hard">
+    <form id="quizForm-lol-hard">
+      <div class="question">
+        <p>1. Quelle est la durée du respawn du Baron Nashor après sa mort ?</p>
+        <label><input type="radio" name="q1" value="1"> 6 minutes</label>
+        <label><input type="radio" name="q1" value="0"> 5 minutes</label>
+      </div>
+
+      <div class="question">
+        <p>2. Quel champion a été le premier à être ajouté au jeu ?</p>
+        <label><input type="radio" name="q2" value="0"> Annie</label>
+        <label><input type="radio" name="q2" value="1"> Singed</label>
+      </div>
+
+      <div class="question">
+        <p>3. Combien de points de compétence sont nécessaires pour maximiser une compétence ?</p>
+        <label><input type="radio" name="q3" value="1"> 5 points</label>
+        <label><input type="radio" name="q3" value="0"> 6 points</label>
+      </div>
+
+      <div class="question">
+        <p>4. Quel objet mythique donne un dash actif ?</p>
+        <label><input type="radio" name="q4" value="1"> Galeforce</label>
+        <label><input type="radio" name="q4" value="0"> Kraken Slayer</label>
+      </div>
+
+      <div class="question">
+        <p>5. Quelle équipe a remporté le World Championship 2023 ?</p>
+        <label><input type="radio" name="q5" value="0"> JD Gaming</label>
+        <label><input type="radio" name="q5" value="1"> T1</label>
+      </div>
+
+      <div class="question">
+        <p>6. Quel est le cooldown de base du sort d'invocateur Flash ?</p>
+        <label><input type="radio" name="q6" value="1"> 300 secondes (5 minutes)</label>
+        <label><input type="radio" name="q6" value="0"> 240 secondes (4 minutes)</label>
+      </div>
+
+      <div class="question">
+        <p>7. Combien de HP a le Nexus au début de la partie ?</p>
+        <label><input type="radio" name="q7" value="1"> 5500 HP</label>
+        <label><input type="radio" name="q7" value="0"> 6000 HP</label>
+      </div>
+
+      <div class="question">
+        <p>8. Quel champion possède une compétence qui peut ressusciter les alliés ?</p>
+        <label><input type="radio" name="q8" value="1"> Renata Glasc</label>
+        <label><input type="radio" name="q8" value="0"> Zilean</label>
+      </div>
+
+      <div class="question">
+        <p>9. Quelle rune principale améliore les dégâts sur les ennemis immobilisés ?</p>
+        <label><input type="radio" name="q9" value="0"> Sudden Impact</label>
+        <label><input type="radio" name="q9" value="1"> Cheap Shot</label>
+      </div>
+
+      <div class="question">
+        <p>10. Combien d'âmes doit collecter le Dragon pour devenir Elder Dragon ?</p>
+        <label><input type="radio" name="q10" value="1"> 4 dragons</label>
+        <label><input type="radio" name="q10" value="0"> 3 dragons</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('lol-hard')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- Design Easy Quiz -->
+  <div class="quiz-container" id="design-easy">
+    <form id="quizForm-design-easy">
+      <div class="question">
+        <p>1. Que signifie RGB en design graphique ?</p>
+        <label><input type="radio" name="q1" value="1"> Rouge, Vert, Bleu</label>
+        <label><input type="radio" name="q1" value="0"> Rouge, Gris, Blanc</label>
+      </div>
+
+      <div class="question">
+        <p>2. Quel logiciel Adobe est principalement utilisé pour l'édition de photos ?</p>
+        <label><input type="radio" name="q2" value="1"> Adobe Photoshop</label>
+        <label><input type="radio" name="q2" value="0"> Adobe Premiere</label>
+      </div>
+
+      <div class="question">
+        <p>3. Qu'est-ce qu'un logo ?</p>
+        <label><input type="radio" name="q3" value="1"> Une représentation graphique d'une marque</label>
+        <label><input type="radio" name="q3" value="0"> Un type de police d'écriture</label>
+      </div>
+
+      <div class="question">
+        <p>4. Quelle est la résolution standard pour les images web ?</p>
+        <label><input type="radio" name="q4" value="0"> 300 DPI</label>
+        <label><input type="radio" name="q4" value="1"> 72 DPI</label>
+      </div>
+
+      <div class="question">
+        <p>5. Quel format d'image supporte la transparence ?</p>
+        <label><input type="radio" name="q5" value="1"> PNG</label>
+        <label><input type="radio" name="q5" value="0"> JPEG</label>
+      </div>
+
+      <div class="question">
+        <p>6. Quelle couleur obtient-on en mélangeant rouge et bleu ?</p>
+        <label><input type="radio" name="q6" value="0"> Orange</label>
+        <label><input type="radio" name="q6" value="1"> Violet/Magenta</label>
+      </div>
+
+      <div class="question">
+        <p>7. Que signifie UI en design ?</p>
+        <label><input type="radio" name="q7" value="1"> User Interface</label>
+        <label><input type="radio" name="q7" value="0"> Universal Image</label>
+      </div>
+
+      <div class="question">
+        <p>8. Quel outil permet de créer des illustrations vectorielles ?</p>
+        <label><input type="radio" name="q8" value="1"> Adobe Illustrator</label>
+        <label><input type="radio" name="q8" value="0"> Adobe Lightroom</label>
+      </div>
+
+      <div class="question">
+        <p>9. Quelle police est considérée comme "sans serif" ?</p>
+        <label><input type="radio" name="q9" value="0"> Times New Roman</label>
+        <label><input type="radio" name="q9" value="1"> Arial</label>
+      </div>
+
+      <div class="question">
+        <p>10. Qu'est-ce que la palette de couleurs ?</p>
+        <label><input type="radio" name="q10" value="1"> Un ensemble de couleurs coordonnées</label>
+        <label><input type="radio" name="q10" value="0"> Un outil de sélection</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('design-easy')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- Design Hard Quiz -->
+  <div class="quiz-container" id="design-hard">
+    <form id="quizForm-design-hard">
+      <div class="question">
+        <p>1. Quelle est la différence principale entre CMYK et RGB ?</p>
+        <label><input type="radio" name="q1" value="1"> CMYK pour impression, RGB pour écran</label>
+        <label><input type="radio" name="q1" value="0"> RGB pour impression, CMYK pour écran</label>
+      </div>
+
+      <div class="question">
+        <p>2. Qu'est-ce que le "Golden Ratio" en design ?</p>
+        <label><input type="radio" name="q2" value="1"> 1.618 (Phi)</label>
+        <label><input type="radio" name="q2" value="0"> 1.5</label>
+      </div>
+
+      <div class="question">
+        <p>3. Quel principe de design crée un point focal dans une composition ?</p>
+        <label><input type="radio" name="q3" value="1"> La hiérarchie visuelle</label>
+        <label><input type="radio" name="q3" value="0"> La symétrie</label>
+      </div>
+
+      <div class="question">
+        <p>4. Quelle profondeur de couleur offre le plus de nuances ?</p>
+        <label><input type="radio" name="q4" value="1"> 32-bit</label>
+        <label><input type="radio" name="q4" value="0"> 8-bit</label>
+      </div>
+
+      <div class="question">
+        <p>5. Qu'est-ce qu'un mockup en design ?</p>
+        <label><input type="radio" name="q5" value="0"> Un brouillon initial</label>
+        <label><input type="radio" name="q5" value="1"> Une représentation réaliste du design final</label>
+      </div>
+
+      <div class="question">
+        <p>6. Quel est le format vectoriel le plus courant ?</p>
+        <label><input type="radio" name="q6" value="1"> SVG</label>
+        <label><input type="radio" name="q6" value="0"> PNG</label>
+      </div>
+
+      <div class="question">
+        <p>7. Que signifie "kerning" en typographie ?</p>
+        <label><input type="radio" name="q7" value="1"> L'espacement entre deux caractères</label>
+        <label><input type="radio" name="q7" value="0"> La hauteur des lettres</label>
+      </div>
+
+      <div class="question">
+        <p>8. Quelle théorie des couleurs utilise des couleurs opposées sur le cercle chromatique ?</p>
+        <label><input type="radio" name="q8" value="1"> Couleurs complémentaires</label>
+        <label><input type="radio" name="q8" value="0"> Couleurs analogues</label>
+      </div>
+
+      <div class="question">
+        <p>9. Qu'est-ce que le "negative space" ?</p>
+        <label><input type="radio" name="q9" value="1"> L'espace vide autour des éléments</label>
+        <label><input type="radio" name="q9" value="0"> Les zones sombres d'une image</label>
+      </div>
+
+      <div class="question">
+        <p>10. Quel format est le meilleur pour les impressions haute qualité ?</p>
+        <label><input type="radio" name="q10" value="1"> TIFF</label>
+        <label><input type="radio" name="q10" value="0"> GIF</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('design-hard')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- Game Dev Easy Quiz -->
+  <div class="quiz-container" id="gamedev-easy">
+    <form id="quizForm-gamedev-easy">
+      <div class="question">
+        <p>1. Quel moteur de jeu utilise le langage C# ?</p>
+        <label><input type="radio" name="q1" value="1"> Unity</label>
+        <label><input type="radio" name="q1" value="0"> Godot</label>
+      </div>
+
+      <div class="question">
+        <p>2. Que signifie FPS dans les jeux vidéo ?</p>
+        <label><input type="radio" name="q2" value="0"> First Person Shooter</label>
+        <label><input type="radio" name="q2" value="1"> Frames Per Second (Images par seconde)</label>
+      </div>
+
+      <div class="question">
+        <p>3. Quel est le rôle d'un Game Designer ?</p>
+        <label><input type="radio" name="q3" value="1"> Concevoir les mécaniques de jeu</label>
+        <label><input type="radio" name="q3" value="0"> Programmer le code</label>
+      </div>
+
+      <div class="question">
+        <p>4. Qu'est-ce qu'un sprite en développement de jeux ?</p>
+        <label><input type="radio" name="q4" value="1"> Une image 2D utilisée pour représenter un objet</label>
+        <label><input type="radio" name="q4" value="0"> Un fichier audio</label>
+      </div>
+
+      <div class="question">
+        <p>5. Quel moteur de jeu est gratuit et open-source ?</p>
+        <label><input type="radio" name="q5" value="0"> Unreal Engine</label>
+        <label><input type="radio" name="q5" value="1"> Godot</label>
+      </div>
+
+      <div class="question">
+        <p>6. Qu'est-ce qu'une hitbox ?</p>
+        <label><input type="radio" name="q6" value="1"> Une zone de collision invisible</label>
+        <label><input type="radio" name="q6" value="0"> Un type de boîte à outils</label>
+      </div>
+
+      <div class="question">
+        <p>7. Quel langage est principalement utilisé avec Unreal Engine ?</p>
+        <label><input type="radio" name="q7" value="0"> Python</label>
+        <label><input type="radio" name="q7" value="1"> C++</label>
+      </div>
+
+      <div class="question">
+        <p>8. Que signifie NPC dans les jeux ?</p>
+        <label><input type="radio" name="q8" value="1"> Non-Player Character (Personnage non-joueur)</label>
+        <label><input type="radio" name="q8" value="0"> New Player Content</label>
+      </div>
+
+      <div class="question">
+        <p>9. Qu'est-ce qu'un level design ?</p>
+        <label><input type="radio" name="q9" value="1"> La conception des niveaux de jeu</label>
+        <label><input type="radio" name="q9" value="0"> Le design des personnages</label>
+      </div>
+
+      <div class="question">
+        <p>10. Quel format audio est le plus utilisé dans les jeux ?</p>
+        <label><input type="radio" name="q10" value="0"> MP4</label>
+        <label><input type="radio" name="q10" value="1"> WAV ou OGG</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('gamedev-easy')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- Game Dev Hard Quiz -->
+  <div class="quiz-container" id="gamedev-hard">
+    <form id="quizForm-gamedev-hard">
+      <div class="question">
+        <p>1. Qu'est-ce que le "delta time" en game development ?</p>
+        <label><input type="radio" name="q1" value="1"> Le temps écoulé entre deux frames</label>
+        <label><input type="radio" name="q1" value="0"> Le temps total de jeu</label>
+      </div>
+
+      <div class="question">
+        <p>2. Quelle structure de données est la plus efficace pour la détection de collision spatiale ?</p>
+        <label><input type="radio" name="q2" value="0"> Linked List</label>
+        <label><input type="radio" name="q2" value="1"> Quadtree ou Octree</label>
+      </div>
+
+      <div class="question">
+        <p>3. Qu'est-ce que le "garbage collection" peut causer dans un jeu ?</p>
+        <label><input type="radio" name="q3" value="1"> Des ralentissements temporaires (frame drops)</label>
+        <label><input type="radio" name="q3" value="0"> Une amélioration des performances</label>
+      </div>
+
+      <div class="question">
+        <p>4. Quelle technique permet de réduire le nombre d'objets rendus à l'écran ?</p>
+        <label><input type="radio" name="q4" value="1"> Frustum Culling</label>
+        <label><input type="radio" name="q4" value="0"> Anti-aliasing</label>
+      </div>
+
+      <div class="question">
+        <p>5. Qu'est-ce qu'un "shader" ?</p>
+        <label><input type="radio" name="q5" value="1"> Un programme qui contrôle le rendu graphique</label>
+        <label><input type="radio" name="q5" value="0"> Un outil de modélisation 3D</label>
+      </div>
+
+      <div class="question">
+        <p>6. Quel pattern de design est couramment utilisé pour gérer les états de jeu ?</p>
+        <label><input type="radio" name="q6" value="0"> Factory Pattern</label>
+        <label><input type="radio" name="q6" value="1"> State Machine</label>
+      </div>
+
+      <div class="question">
+        <p>7. Qu'est-ce que le "object pooling" ?</p>
+        <label><input type="radio" name="q7" value="1"> Réutiliser des objets au lieu de les créer/détruire</label>
+        <label><input type="radio" name="q7" value="0"> Regrouper les objets similaires</label>
+      </div>
+
+      <div class="question">
+        <p>8. Quelle API graphique est utilisée par défaut dans Unity ?</p>
+        <label><input type="radio" name="q8" value="1"> DirectX ou OpenGL selon la plateforme</label>
+        <label><input type="radio" name="q8" value="0"> Vulkan uniquement</label>
+      </div>
+
+      <div class="question">
+        <p>9. Qu'est-ce que le "baking" de lumière ?</p>
+        <label><input type="radio" name="q9" value="1"> Précalculer l'éclairage pour améliorer les performances</label>
+        <label><input type="radio" name="q9" value="0"> Créer des effets de lumière dynamiques</label>
+      </div>
+
+      <div class="question">
+        <p>10. Quel est le but du "profiling" dans le développement de jeux ?</p>
+        <label><input type="radio" name="q10" value="1"> Identifier les goulots d'étranglement de performance</label>
+        <label><input type="radio" name="q10" value="0"> Créer des profils de joueurs</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('gamedev-hard')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- Robotics Easy Quiz -->
+  <div class="quiz-container" id="robotics-easy">
+    <form id="quizForm-robotics-easy">
+      <div class="question">
+        <p>1. Qu'est-ce qu'un robot ?</p>
+        <label><input type="radio" name="q1" value="1"> Une machine programmable qui peut accomplir des tâches</label>
+        <label><input type="radio" name="q1" value="0"> Un ordinateur uniquement</label>
+      </div>
+
+      <div class="question">
+        <p>2. Quel composant permet à un robot de "sentir" son environnement ?</p>
+        <label><input type="radio" name="q2" value="1"> Les capteurs (sensors)</label>
+        <label><input type="radio" name="q2" value="0"> Les moteurs</label>
+      </div>
+
+      <div class="question">
+        <p>3. Qu'est-ce qu'un Arduino ?</p>
+        <label><input type="radio" name="q3" value="0"> Un langage de programmation</label>
+        <label><input type="radio" name="q3" value="1"> Une carte microcontrôleur pour la robotique</label>
+      </div>
+
+      <div class="question">
+        <p>4. Quel type de moteur est le plus utilisé en robotique pour les mouvements précis ?</p>
+        <label><input type="radio" name="q4" value="1"> Servo-moteur</label>
+        <label><input type="radio" name="q4" value="0"> Moteur thermique</label>
+      </div>
+
+      <div class="question">
+        <p>5. Que signifie IoT en robotique ?</p>
+        <label><input type="radio" name="q5" value="1"> Internet of Things (Internet des Objets)</label>
+        <label><input type="radio" name="q5" value="0"> Intelligence Of Technology</label>
+      </div>
+
+      <div class="question">
+        <p>6. Quel capteur permet de mesurer la distance ?</p>
+        <label><input type="radio" name="q6" value="0"> Capteur de température</label>
+        <label><input type="radio" name="q6" value="1"> Capteur ultrason</label>
+      </div>
+
+      <div class="question">
+        <p>7. Qu'est-ce qu'un actuateur en robotique ?</p>
+        <label><input type="radio" name="q7" value="1"> Un dispositif qui produit un mouvement</label>
+        <label><input type="radio" name="q7" value="0"> Un capteur de mouvement</label>
+      </div>
+
+      <div class="question">
+        <p>8. Quel est le rôle d'un microcontrôleur dans un robot ?</p>
+        <label><input type="radio" name="q8" value="1"> Contrôler et coordonner les composants du robot</label>
+        <label><input type="radio" name="q8" value="0"> Fournir l'énergie au robot</label>
+      </div>
+
+      <div class="question">
+        <p>9. Qu'est-ce qu'un robot autonome ?</p>
+        <label><input type="radio" name="q9" value="0"> Un robot télécommandé</label>
+        <label><input type="radio" name="q9" value="1"> Un robot qui fonctionne sans intervention humaine</label>
+      </div>
+
+      <div class="question">
+        <p>10. Quel type de batterie est couramment utilisé en robotique mobile ?</p>
+        <label><input type="radio" name="q10" value="1"> Lithium-Polymère (LiPo)</label>
+        <label><input type="radio" name="q10" value="0"> Pile AA</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('robotics-easy')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- Robotics Hard Quiz -->
+  <div class="quiz-container" id="robotics-hard">
+    <form id="quizForm-robotics-hard">
+      <div class="question">
+        <p>1. Qu'est-ce que le SLAM en robotique ?</p>
+        <label><input type="radio" name="q1" value="1"> Simultaneous Localization And Mapping</label>
+        <label><input type="radio" name="q1" value="0"> Smart Learning Algorithm Machine</label>
+      </div>
+
+      <div class="question">
+        <p>2. Quel algorithme est utilisé pour la planification de trajectoire ?</p>
+        <label><input type="radio" name="q2" value="0"> Bubble Sort</label>
+        <label><input type="radio" name="q2" value="1"> A* (A-star)</label>
+      </div>
+
+      <div class="question">
+        <p>3. Qu'est-ce qu'un PID controller ?</p>
+        <label><input type="radio" name="q3" value="1"> Proportional-Integral-Derivative controller</label>
+        <label><input type="radio" name="q3" value="0"> Programmable Input Device</label>
+      </div>
+
+      <div class="question">
+        <p>4. Quel protocole de communication est utilisé entre microcontrôleurs ?</p>
+        <label><input type="radio" name="q4" value="0"> HTTP uniquement</label>
+        <label><input type="radio" name="q4" value="1"> I2C, SPI ou UART</label>
+      </div>
+
+      <div class="question">
+        <p>5. Qu'est-ce que ROS en robotique ?</p>
+        <label><input type="radio" name="q5" value="1"> Robot Operating System</label>
+        <label><input type="radio" name="q5" value="0"> Remote Operating Service</label>
+      </div>
+
+      <div class="question">
+        <p>6. Quel capteur permet de déterminer l'orientation d'un robot dans l'espace ?</p>
+        <label><input type="radio" name="q6" value="1"> IMU (Inertial Measurement Unit)</label>
+        <label><input type="radio" name="q6" value="0"> Capteur de lumière</label>
+      </div>
+
+      <div class="question">
+        <p>7. Qu'est-ce que la cinématique inverse en robotique ?</p>
+        <label><input type="radio" name="q7" value="1"> Calculer les angles des joints pour atteindre une position</label>
+        <label><input type="radio" name="q7" value="0"> Le mouvement inverse d'un robot</label>
+      </div>
+
+      <div class="question">
+        <p>8. Quel type de moteur offre le meilleur contrôle de position sans encodeur ?</p>
+        <label><input type="radio" name="q8" value="1"> Moteur pas-à-pas (stepper motor)</label>
+        <label><input type="radio" name="q8" value="0"> Moteur DC simple</label>
+      </div>
+
+      <div class="question">
+        <p>9. Qu'est-ce que le "odometry" en robotique mobile ?</p>
+        <label><input type="radio" name="q9" value="1"> L'estimation de la position basée sur le mouvement des roues</label>
+        <label><input type="radio" name="q9" value="0"> La mesure de la vitesse maximale</label>
+      </div>
+
+      <div class="question">
+        <p>10. Quel capteur utilise un faisceau laser rotatif pour mapper l'environnement ?</p>
+        <label><input type="radio" name="q10" value="0"> Caméra RGB</label>
+        <label><input type="radio" name="q10" value="1"> LiDAR</label>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="corrigerQuiz('robotics-hard')">Valider mes réponses</button>
+    </form>
+  </div>
+
+  <!-- Résultat -->
+  <div id="resultat"></div>
+</main>
+
+<footer>
+<figure> 
+  <a href="mailto:wajdilahmar6@gmail.com"><img src="images/email2.png" alt="email" class=img_contact></a>
+  <a href="https://www.facebook.com"><img src="images/facebook3.png" alt="email" class=img_contact></a>
+  <a href="https://www.instagram.com/"><img src="images/instagram3.png" alt="email" class=img_contact></a>
+  <a href="https://x.com"><img src="images/X2.png" alt="email" class=img_contact></a>
+  <a href="https://www.linkedin.com/in/wajdi-elahmar-16723a345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="images/linkedin2.png" alt="email" class=img_contact></a>
+  <figcaption>ME CONTACTER
+  </figcaption>
+</figure>
+<p>© 2026 – Elahmar Wajdi | Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
+<script src="js/quiz.js"></script>
+</body>
+</html>

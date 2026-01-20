@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon site personnel</title>
+<link rel="stylesheet" href="css/checked/nav2.css"  >
+<link rel="stylesheet" href="css/checked/body_header_footer.css">
+<link rel="stylesheet" href="css/checked/contact.css">
+</head>
+<body>
+
+<header>
+<div>
+    <img src="images/titre.png" height="100%" width="100%">
+</div>
+</header>
+
+<nav >
+<ul >
+<li id="li1"><img src="images/icon2.png" >                              </li>
+<li id="li2"><a href="index.html">Accueil                       </a>    </li>
+<li id="li5"><a href="quiz.html">Quizz                          </a>    </li>
+<li id="li6" class="contact"><a href="contact.html">Contact     </a>    </li>
+</ul>
+</nav>
+
+<main>
+  <section class="contact-section">
+    <div class="contact-header">
+      <a href="#cont"><h2>Contactez-Moi</h2></a>
+      <p>Une question, une opportunité ou simplement envie d'échanger ? N'hésitez pas à me contacter !</p>
+    </div>
+
+    <div class="contact-content">
+      <!-- Message de succès -->
+      <div class="success-message" id="successMessage">
+        Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
+      </div>
+
+      <!-- Formulaire de contact -->
+      <form class="contact-form" id="contactForm">
+        <div id="cont" class="form-group">
+          <label for="nom">Nom complet *</label>
+          <input type="text" id="nom" name="nom" required>
+          <span class="error">Veuillez entrer votre nom</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email *</label>
+          <input type="email" id="email" name="email" required>
+          <span class="error">Veuillez entrer une adresse email valide</span>
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" name="telephone">
+        </div>
+
+        <div class="form-group">
+          <label for="sujet">Sujet du message *</label>
+          <select id="sujet" name="sujet" required>
+            <option value="">-- Choisissez un sujet --</option>
+            <option value="opportunite">Opportunité professionnelle</option>
+            <option value="collaboration">Proposition de collaboration</option>
+            <option value="question">Question générale</option>
+            <option value="projet">Projet commun</option>
+            <option value="autre">Autre</option>
+          </select>
+          <span class="error">Veuillez sélectionner un sujet</span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Votre message *</label>
+          <textarea id="message" name="message" required></textarea>
+          <span class="error">Veuillez entrer votre message (minimum 10 caractères)</span>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn btn-primary">Envoyer le message</button>
+          <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+        </div>
+      </form>
+
+      <!-- Informations de contact -->
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>📧 Email</h3>
+          <p><a href="mailto:wajdilahmar6@gmail.com">wajdilahmar6
+            @gmail.com</a></p>
+        </div>
+
+        <div class="info-card">
+          <h3>📱 Téléphone</h3>
+          <p><a href="tel:+21612345678">+216 88 888 888</a></p>
+        </div>
+
+        <div class="info-card">
+          <h3>📍Localisation</h3>
+          <p><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjpssGPiZmSAxXT9bsIHX9KHtYQFnoECB0QAQ&url=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2FSfax%252C%2520Tunisia&usg=AOvVaw1uptvAxBODItA5cfDlaRzZ&opi=89978449">Sfax, Tunisie</a></p>
+        </div>
+
+        <div class="info-card">
+          <h3>🔗 Réseaux Sociaux</h3>
+          <p>
+            <a href="https://www.linkedin.com/in/wajdi-elahmar-16723a345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a> | 
+            <a href="https://github.com/wajdi-elahmar-9" target="_blank">GitHub</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+<figure> 
+  <a href="mailto:wajdilahmar6@gmail.com"><img src="images/email2.png" alt="email" class=img_contact></a>
+  <a href="https://www.facebook.com"><img src="images/facebook3.png" alt="email" class=img_contact></a>
+  <a href="https://www.instagram.com/"><img src="images/instagram3.png" alt="email" class=img_contact></a>
+  <a href="https://x.com"><img src="images/X2.png" alt="email" class=img_contact></a>
+  <a href="https://www.linkedin.com/in/wajdi-elahmar-16723a345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="images/linkedin2.png" alt="email" class=img_contact></a>
+  <figcaption>ME CONTACTER
+  </figcaption>
+</figure>
+<p>© 2026 – Elahmar Wajdi | Tous droits réservés</p>
+</footer>
+<script src="js/contact.js"></script>
+</body>
+</html>
